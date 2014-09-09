@@ -9,6 +9,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     rm -rf *
     rm .gitignore
     cp -r ../node_modules .
+    cp -r ../pictures .
     cp ../index.html .
     git add -A
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to gh-pages"
