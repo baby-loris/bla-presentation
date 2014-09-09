@@ -7,6 +7,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     git clone -b gh-pages https://${GH_TOKEN}@github.com/tarmolov/bla-presentation.git deploy
     cd deploy
     rm -rf *
+    rm .gitignore
     cp -r ../node_modules .
     git add -A
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to gh-pages"
