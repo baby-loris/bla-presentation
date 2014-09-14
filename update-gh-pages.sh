@@ -4,7 +4,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     git config --global user.email "travis@travis-ci.org"
     git config --global user.name "Travis"
 
-    git clone -b gh-pages https://${GH_TOKEN}@github.com/tarmolov/bla-presentation.git deploy
+    git clone -b gh-pages https://${GH_TOKEN}@github.com/baby-loris/bla-presentation.git deploy
     cd deploy
     rm -rf *
     rm .gitignore
