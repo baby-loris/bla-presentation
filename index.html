@@ -6,6 +6,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen.css">
+    <style>
+        .scheme {
+            position: relative;
+            padding: 300px 100px 0;
+        }
+    </style>
 </head>
 <body class="shower shower--list">
     <header class="shower__caption">
@@ -19,7 +25,7 @@
     </header>
 
     <section id="title">
-        <img src="pictures/slow-loris.jpg" alt="" class="cover">
+        <img src="pictures/slow-loris.png" alt="Slow loris" class="cover">
         <h2>BLA</h2>
         <p>@dodev, @lemmy-, @tarmolov</p>
         <style>
@@ -29,17 +35,105 @@
         </style>
     </section>
 
-    <section>
-        <h2>Схема взаимодействия frontend и backend</h2>
-        <p>тут будет картинка</p>
+    <section id="interaction">
+        <h2>Как мы работаем с данными</h2>
+        <div class="scheme">
+            <div class="next icon browser place m l">
+                <img src="pictures/ie6.png"/>
+                <div>Браузер</div>
+            </div>
+            <div class="next server icon place m m">
+                <img src="pictures/server.png"/>
+                <div>Сервер</div>
+            </div>
+            <div class="next arrows _frontend place m m">
+                <img src="pictures/arrow_blue.png"/>
+            </div>
+            <div class="next server icon place m m">
+                <img src="pictures/server.png"/>
+                <div>Frontend</div>
+            </div>
+            <div class="next server icon backend place m r">
+                <img src="pictures/server.png"/>
+                <div>Backend</div>
+            </div>
+            <div class="next arrows _backend place m r">
+                <img src="pictures/arrow_blue.png"/>
+            </div>
+        </div>
+        <style>
+            #interaction .icon {text-align: center}
+            #interaction .server {background: #fff}
+            #interaction .arrows {margin-top: -30px; line-height: 150px; vertical-align: middle}
+            #interaction .arrows img {display: block; margin: 10px 0;}
+            #interaction .arrows._frontend {margin-left: -175px;}
+            #interaction .arrows._backend {right: 196px}
+        </style>
     </section>
 
-    <section>
-        <h2>Есть проблемы</h2>
-        <ol>
-            <li class="next">Различные способы работы с данными в браузере и на сервере.</li>
-            <li class="next">Много запросов из браузера.</li>
-        </ol>
+    <section id="problems">
+        <h2>Но тут есть проблемы</h2>
+        <div class="scheme">
+            <div class="icon browser place m l">
+                <img src="pictures/ie6.png"/>
+                <div>Браузер</div>
+            </div>
+            <div class="arrows _frontend place m m">
+                <img src="pictures/arrow_blue.png"/>
+                <div class="next">
+                    <img src="pictures/arrow_blue.png"/>
+                    <img src="pictures/arrow_blue.png"/>
+                    <img src="pictures/arrow_blue.png"/>
+                    <img src="pictures/arrow_blue.png"/>
+                </div>
+            </div>
+            <div class="server icon place m m">
+                <img src="pictures/server.png"/>
+                <div>Frontend</div>
+            </div>
+            <div class="server icon backend place m r">
+                <img src="pictures/server.png"/>
+                <div>Backend</div>
+            </div>
+            <div class="arrows _backend place m r">
+                <div class="next">
+                    <img src="pictures/arrow_red.png"/>
+                    <img src="pictures/arrow_red.png"/>
+                    <img src="pictures/arrow_red.png"/>
+                    <img src="pictures/arrow_red.png"/>
+                    <img src="pictures/arrow_red.png"/>
+                </div>
+                <img src="pictures/arrow_blue.png"/>
+            </div>
+            <div class="next">
+                <div class="browser_to_frontend place m m">
+                    <div>jQuery</div>
+                </div>
+                <div class="frontend_to_backend place m m">
+                    <div>http.request</div>
+                    <div>asker</div>
+                    <div>superagent</div>
+                </div>
+            </div>
+        </div>
+        <h3 class="next">
+            Запросов много<span class="space"></span>и<span class="space"></span>они разные
+        </h3>
+        <style>
+            #problems h3 {font-size: 40px}
+            #problems .space {padding-right: 80px}
+            #problems .next {display: none}
+            #problems .next.active {display: block}
+            #problems .icon {text-align: center}
+            #problems .server {background: #fff}
+            #problems .arrows {margin-top: -30px; line-height: 150px; vertical-align: middle}
+            #problems .arrows img {display: block; margin: 15px 0;}
+            #problems .arrows._frontend {margin-left: -175px;}
+            #problems .arrows._backend {right: 196px}
+            #problems .arrows._backend .next.active + img {display: none}
+            #problems .browser_to_frontend {font-size: 20px;margin-left: -203px; margin-top: -123px}
+            #problems .frontend_to_backend{font-size: 20px; line-height: 38px; margin-left: 158px; margin-top: -86px}
+        </style>
     </section>
 
     <section>
