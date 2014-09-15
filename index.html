@@ -6,12 +6,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen.css">
-    <style>
-        .scheme {
-            position: relative;
-            padding: 300px 100px 0;
-        }
-    </style>
 </head>
 <body class="shower shower--list">
     <header class="shower__caption">
@@ -33,6 +27,11 @@
             #title h2 {font-size: 70px; margin-bottom: 0.3em; color: #fff}
             #title p {font-style: italic; color: #fff}
         </style>
+    </section>
+
+    <section>
+        <h2>Но это не</h2>
+        <h2 class="shout">blah-blah-blah</h2>
     </section>
 
     <section id="interaction">
@@ -62,6 +61,7 @@
             </div>
         </div>
         <style>
+            #interaction .scheme {position: relative; padding: 300px 100px 0;}
             #interaction .icon {text-align: center}
             #interaction .server {background: #fff}
             #interaction .arrows {margin-top: -30px; line-height: 150px; vertical-align: middle}
@@ -116,10 +116,8 @@
                 </div>
             </div>
         </div>
-        <h3 class="next">
-            Запросов много<span class="space"></span>и<span class="space"></span>они разные
-        </h3>
         <style>
+            #problems .scheme {position: relative; padding: 300px 100px 0;}
             #problems h3 {font-size: 40px}
             #problems .space {padding-right: 80px}
             #problems .next {display: none}
@@ -136,18 +134,77 @@
         </style>
     </section>
 
-    <section>
-        <h2>Решения</h2>
-        <ol>
-            <li class="next">Единый интерфейс работы с данными.</li>
-            <li class="next">Объединение запросов в один.</li>
-        </ol>
+    <section id="solutions">
+        <h2>Что хотелось бы</h2>
+        <div class="scheme">
+            <div class="icon browser place m l">
+                <img src="pictures/ie6.png"/>
+                <div>Браузер</div>
+            </div>
+            <div class="arrows _frontend place m m">
+                <div class="batch next">
+                    <img src="pictures/arrow_blue_short.png"/>
+                    <img src="pictures/arrow_blue_short.png"/>
+                    <img src="pictures/arrow_blue_short.png"/>
+                    <img src="pictures/arrow_blue_short.png"/>
+                    <img src="pictures/arrow_blue_short.png"/>
+                    <img class="batched" src="pictures/arrow_blue_short.png"/>
+                </div>
+                <div>
+                    <img src="pictures/arrow_blue.png"/>
+                    <img src="pictures/arrow_blue.png"/>
+                    <img src="pictures/arrow_blue.png"/>
+                    <img src="pictures/arrow_blue.png"/>
+                    <img src="pictures/arrow_blue.png"/>
+                </div>
+            </div>
+            <div class="server icon place m m">
+                <img src="pictures/server.png"/>
+                <div>Frontend</div>
+            </div>
+            <div class="server icon backend place m r">
+                <img src="pictures/server.png"/>
+                <div>Backend</div>
+            </div>
+            <div class="arrows _backend place m r">
+                <div class="next">
+                    <img src="pictures/arrow_blue.png"/>
+                    <img src="pictures/arrow_blue.png"/>
+                    <img src="pictures/arrow_blue.png"/>
+                    <img src="pictures/arrow_blue.png"/>
+                    <img src="pictures/arrow_blue.png"/>
+                </div>
+                <div>
+                    <img src="pictures/arrow_red.png"/>
+                    <img src="pictures/arrow_red.png"/>
+                    <img src="pictures/arrow_red.png"/>
+                    <img src="pictures/arrow_red.png"/>
+                    <img src="pictures/arrow_red.png"/>
+                </div>
+            </div>
+        </div>
+        <style>
+            #solutions .scheme {position: relative; padding: 300px 100px 0;}
+            #solutions .next {display: none}
+            #solutions .next.active {display: block}
+            #solutions .icon {text-align: center}
+            #solutions .server {background: #fff}
+            #solutions .arrows {margin-top: -30px; line-height: 150px; vertical-align: middle}
+            #solutions .arrows img {display: block; margin: 15px 0;}
+            #solutions .arrows._frontend {margin-left: -175px;}
+            #solutions .arrows._backend {right: 196px}
+            #solutions .batch {margin-left: -50px}
+            #solutions .batch:after {position: absolute; top: 0; right: -20px; width: 10px; height: 200px; content: ''; background: #6FC6F5}
+            #solutions .batch .batched {position: absolute; top: 50%; margin-top: -11px; right: -80px}
+            #solutions .arrows._frontend .batch.active + div {display: none}
+            #solutions .arrows._backend .next.active + div {display: none}
+        </style>
     </section>
 
     <section>
         <h2 class="shout">BLA*</h2>
         <p class="note place bottom">
-            *Библиотека, которая решает ваши проблемы.
+            *Библиотека, которая решает наши проблемы.
         </p>
     </section>
 
