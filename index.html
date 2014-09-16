@@ -29,7 +29,7 @@
         </style>
     </section>
 
-    <section>
+    <section id="not-blah">
         <h2>Но это не</h2>
         <h2 class="shout">blah-blah-blah</h2>
     </section>
@@ -201,14 +201,14 @@
         </style>
     </section>
 
-    <section>
+    <section id="bla">
         <h2 class="shout">BLA*</h2>
         <p class="note place bottom">
             *библиотека, которая решает наши проблемы
         </p>
     </section>
 
-    <section>
+    <section id="why-bla">
         <h2 class="shout">Почему BLA?</h2>
     </section>
 
@@ -243,38 +243,110 @@
         <h2 class="shout">baby-loris-api</h2>
     </section>
 
-    <section id="bla">
+    <section id="bla-again">
         <h2 class="shout">BLA</h2>
     </section>
 
-    <section>
-        <h2>Что внутри?</h2>
+    <section id="problems-and-solutions">
+        <h2>Проблематика</h2>
+        <div class="next">
+            <div class="problem">Много запросов из браузера</div>
+            <img src="pictures/arrow_blue_short.png"/>
+            <div class="solution">Собирать запрос в один (batch)</div>
+        </div>
+        <div class="next">
+            <div class="problem">Разные способы обращения за данными на клиенте и сервере</div>
+            <img src="pictures/arrow_blue_short.png"/>
+            <div class="solution">Унифицированный интерфейс</div>
+        </div>
+        <style>
+            #problems-and-solutions > div {position: relative; line-height: 30px; margin-bottom: 20px}
+            #problems-and-solutions img {margin-left: 380px}
+            #problems-and-solutions .problem {position: absolute; top: 0; left: 0; width: 350px}
+            #problems-and-solutions .solution {position: absolute; top: 0; right: 0; width: 350px}
+        </style>
+    </section>
+
+    <section id="batch">
+        <h2>batch-режим</h2>
         <ol>
-            <li class="next">3 сущности: Api, ApiMethod, ApiError</li>
-            <li class="next">Пример запроса с браузера на backend</li>
-            <li class="next">express</li>
+            <li class="next">Сделано специально для браузера</li>
+            <li class="next">Собирает запросы в рамках одного тика</li>
+            <li class="next">Клиент не знает ничего о батчинге</li>
+            <li class="next">Одинаковые запросы не дублируются</li>
+            <li class="next">Его можно отключить :)</li>
         </ol>
     </section>
 
-    <section>
-        <h2>Что умеет?</h2>
-        <ol>
-            <li class="next">Унифицированные интерфейс работы с данными для сервера и клиента.</li>
-            <li class="next">Декларативное создание методов.</li>
-            <li class="next">batch-режим</li>
-            <li class="next">Генерируемая документация.</li>
-            <li class="next">Валидация параметров.</li>
-        </ol>
+    <section id="batch-before">
+        <h2>До batch-режима</h2>
+        <img src="pictures/batch_before.png"/>
     </section>
 
-    <section>
-        <h2>Где используется?</h2>
-        <ol>
-            <li class="next">metro.yandex.ru</li>
-            <li class="next">карточный планировщик</li>
-            <li class="next">mtquality</li>
-            <li class="next">weatherpic</li>
-        </ol>
+    <section id="batch-after">
+        <h2>После batch-режима</h2>
+        <img src="pictures/batch_after.png"/>
+    </section>
+
+    <section id="interface">
+        <h2>Унифицированный интерфейс работы</h2>
+        <div class="next">
+            <h3>На сервере</h3>
+            <pre style="background:#fff;color:#000">
+                <code>api.<span style="color:#a535ae">exec</span>(<span style="color:#00a33f">'hello'</span>, {name: <span style="color:#00a33f">'Stepan'</span>}).then(<span style="color:#ff5600">function</span> (res) {</code>
+                <code>    <span style="color:#21439c">console</span><span style="color:#a535ae">.log</span>(res); <span style="color:#919191">// Hello, Stepan</span></code>
+                <code>});</code>
+            </pre>
+        </div>
+        <div class="next">
+            <h3>На клиенте</h3>
+            <pre style="background:#fff;color:#000">
+                <code>api.<span style="color:#a535ae">exec</span>(<span style="color:#00a33f">'hello'</span>, {name: <span style="color:#00a33f">'Stepan'</span>}).then(<span style="color:#ff5600">function</span> (res) {</code>
+                <code>    <span style="color:#21439c">console</span><span style="color:#a535ae">.log</span>(res); <span style="color:#919191">// Hello, Stepan</span></code>
+                <code>});</code>
+            </pre>
+        </div>
+        <style>
+            #interface h3 {font-size: 30px; color: #585A5E}
+            #interface code {line-height: 1.5}
+        </style>
+    </section>
+
+    <section id="api-method">
+        <h2>Декларативность</h2>
+        <pre style="background:#fff;color:#000">
+            <code><span style="color:#ff5600">var</span> ApiMethod <span style="color:#ff5600">=</span> require(<span style="color:#00a33f">'bla'</span>).ApiMethod;</code>
+            <code>module.exports <span style="color:#ff5600">=</span> <span style="color:#ff5600">new</span> <span style="color:#21439c">ApiMethod</span>(<span style="color:#00a33f">'hello'</span>)</code>
+            <code>    .setDescription(<span style="color:#00a33f">'Returns greeting from server'</span>)</code>
+            <code>    .addParam({</code>
+            <code>        name: <span style="color:#00a33f">'name'</span>,</code>
+            <code>        description: <span style="color:#00a33f">'User name'</span>,</code>
+            <code>        required: <span style="color:#a535ae">true</span></code>
+            <code>    })</code>
+            <code>    .setAction(<span style="color:#ff5600">function</span> (params) {</code>
+            <code>        <span style="color:#ff5600">return</span> <span style="color:#00a33f">'Hello, '</span> <span style="color:#ff5600">+</span> params.<span style="color:#a535ae">name</span>;</code>
+            <code>    });</code>
+        </pre>
+        <style>
+            #api-method code {line-height: 1.5}
+        </style>
+    </section>
+
+    <section id="param-validation">
+        <h2>Валидация параметров</h2>
+        <pre style="background:#fff;color:#000">
+            <code>api.<span style="color:#a535ae">exec</span>(<span style="color:#00a33f">'hello'</span>).fail(<span style="color:#ff5600">function</span> (error) {</code>
+            <code>    <span style="color:#21439c">console</span><span style="color:#a535ae">.log</span>(error.message); <span style="color:#919191">// missing name parameter</span></code>
+            <code>});</code>
+        </pre>
+        <style>
+            #api-method code {line-height: 1.5}
+        </style>
+    </section>
+
+    <section id="documentation">
+        <h2>Авто документация</h2>
+        <img src="pictures/documentation.png"/>
     </section>
 
     <section id="metro">
@@ -303,7 +375,7 @@
         </style>
     </section>
 
-    <section>
+    <section id="get-it-now">
         <h2>Как забрать себе?</h2>
         <code>npm i bla</code>
         <p><a href="https://github.com/baby-loris/bla">https: //github.com/baby-loris/bla</a></p>
