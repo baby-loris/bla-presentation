@@ -23,7 +23,7 @@
         <h2>BLA</h2>
         <p>@dodev, @lemmy-, @tarmolov</p>
         <style>
-            #title:after {display: none}
+            #title:after {visibility: hidden}
             #title h2 {font-size: 70px; margin-bottom: 0.3em; color: #fff}
             #title p {font-style: italic; color: #fff}
         </style>
@@ -225,8 +225,10 @@
     </section>
 
     <section id="loris">
-        <h2>Slow Loris — очень милые</h2>
-        <img src="pictures/slow-loris-eating-rice.gif"/>
+        <img src="pictures/slow-loris-2.png" class="cover"/>
+        <style>
+            #loris:after {visibility: hidden}
+        </style>
     </section>
 
     <section id="project-stub">
@@ -370,7 +372,7 @@
     <section id="weatherpic-live">
         <iframe src="http://weatherpic.herokuapp.com/?autoplay=yes"></iframe>
         <style>
-            #weatherpic-live:after {display: none}
+            #weatherpic-live:after {visibility: hidden}
             #weatherpic-live iframe {position:absolute; top:0; right: 0; width: 1024px; height: 640px}
         </style>
     </section>
