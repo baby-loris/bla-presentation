@@ -322,15 +322,19 @@
         <h2>Декларативность</h2>
         <pre style="background:#fff;color:#000">
             <code>module.exports <span style="color:#ff5600">=</span> <span style="color:#ff5600">new</span> <span style="color:#21439c">ApiMethod</span>(<span style="color:#00a33f">'hello'</span>)</code>
-            <code>    .setDescription(<span style="color:#00a33f">'Returns greeting from server'</span>)</code>
+            <code class="next">    .setDescription(<span style="color:#00a33f">'Returns greeting from server'</span>)</code>
+            <div class="next">
             <code>    .addParam({</code>
             <code>        name: <span style="color:#00a33f">'name'</span>,</code>
             <code>        description: <span style="color:#00a33f">'User name'</span>,</code>
             <code>        required: <span style="color:#a535ae">true</span></code>
             <code>    })</code>
+            </div>
+            <div class="next">
             <code>    .setAction(<span style="color:#ff5600">function</span> (params) {</code>
             <code>        <span style="color:#ff5600">return</span> <span style="color:#00a33f">'Hello, '</span> <span style="color:#ff5600">+</span> params.<span style="color:#a535ae">name</span>;</code>
             <code>    });</code>
+            </div>
         </pre>
         <style>
             #api-method code {line-height: 1.5}
