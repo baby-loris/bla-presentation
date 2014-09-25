@@ -271,11 +271,43 @@
     </section>
 
     <section id="batch">
-        <h2 class="shout">batch-режим</h2>
-        <!--<ol> <li class="next">Сделано специально для браузера</li> <li class="next">Собирает запросы в рамках одного тика</li> <li class="next">Клиент не знает ничего о батчинге</li>-->
-            <!--<li class="next">Одинаковые запросы не дублируются</li>-->
-            <!--<li class="next">Его можно отключить :)</li>-->
-        <!--</ol>-->
+        <h2>batch-режим</h2>
+        <div class="scheme">
+            <div class="icon browser place m l">
+                <img src="pictures/ie6.png"/>
+                <div>Браузер</div>
+            </div>
+            <div class="arrows _frontend place m m">
+                <div class="batch">
+                    <img src="pictures/arrow_blue_short.png"/>
+                    <img src="pictures/arrow_blue_short.png"/>
+                    <img src="pictures/arrow_blue_short.png"/>
+                    <img src="pictures/arrow_blue_short.png"/>
+                    <img src="pictures/arrow_blue_short.png"/>
+                    <img class="batched" src="pictures/arrow_blue_short.png"/>
+                </div>
+            </div>
+            <div class="server icon place m m">
+                <img class="nodejs" src="pictures/nodejs.png"/>
+                <img src="pictures/server.png"/>
+                <div>Frontend</div>
+            </div>
+        </div>
+        <style>
+            #batch .scheme {position: relative; padding: 300px 100px 0;}
+            #batch .next {display: none}
+            #batch .next.active {display: block}
+            #batch .icon {text-align: center}
+            #batch .server {background: #fff}
+            #batch .arrows {margin-top: -30px; line-height: 150px; vertical-align: middle}
+            #batch .arrows img {display: block; margin: 15px 0;}
+            #batch .arrows._frontend {margin-left: -175px;}
+            #batch .batch {margin-left: -50px}
+            #batch .batch:after {position: absolute; top: 0; right: -20px; width: 10px; height: 200px; content: ''; background: #6FC6F5}
+            #batch .batch .batched {position: absolute; top: 50%; margin-top: -11px; right: -80px}
+            #batch .arrows._frontend .batch.active + div {display: none}
+            #batch .nodejs {position:absolute; top: -50px}
+        </style>
     </section>
 
     <section id="batch-before">
@@ -286,6 +318,12 @@
     <section id="batch-after">
         <h2>После batch-режима</h2>
         <img src="pictures/batch_after.png"/>
+    </section>
+
+    <section id="batch-compare">
+        <h2>Batch нагляднее</h2>
+        <img src="pictures/batch_graph.png"/>
+        <div><a href="https://github.com/baby-loris/bla-benchmark">https://github.com/baby-loris/bla-benchmark</a></div>
     </section>
 
     <section id="interface">
